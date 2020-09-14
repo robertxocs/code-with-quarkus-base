@@ -18,4 +18,13 @@ public class ExampleResourceTest {
              .body(is("hello"));
     }
 
+    @Test
+    void greeting() {
+        given()
+                .when().get("/hello/greeting/Robert")
+                .then()
+                .statusCode(200)
+                .body(is("Hello in uppercase ROBERT"));
+
+    }
 }
